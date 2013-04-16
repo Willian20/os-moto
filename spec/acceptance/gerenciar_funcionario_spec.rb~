@@ -1,0 +1,63 @@
+# coding: utf-8
+
+require 'spec_helper'
+
+feature 'gerenciar funcioario' do
+
+  scenario 'incluir Funcioario' do # , :js => true  do
+
+    visit new_funcioario_path
+
+    preencher_e_verificar_funcioario
+
+    
+
+  end
+
+  scenario 'alterar funcioario' do #, :js => true  do
+
+    funcioario = FactoryGirl.create(:funcioario)
+
+    visit edit_funcioario_path(funcioario)
+
+    preencher_e_verificar_funcioario
+
+
+
+  end
+
+   scenario 'excluir funcioario' do #, :javascript => true  do
+
+       funcioario = FactoryGirl.create(:funcioario)
+
+        visit funcioarios_path
+
+        click_link 'Excluir'
+
+    
+
+  end
+  def preencher_e_verificar_funcioario
+
+      fill_in 'Nome',  :with => "Willian"
+      fill_in 'Cpf',  :with => "099345678"
+      fill_in 'Telefone',  :with => "2734567"
+      fill_in 'Formacao',  :with => "técnica"
+      fill_in 'Funcao',  :with => "Mecanico"
+     
+
+        
+ 
+      click_button 'Salvar'
+
+      page.should have_content 'Nome: Willian'
+      page.should have_content 'Cpf: 099345678'
+      page.should have_content 'Telefone: 2734567'
+      page.should have_content 'Formacao: técnica'
+      page.should have_content 'Funcao: Mecanico'
+
+
+      
+
+   end
+end
