@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @moto.nome %>
+</p>
+
+<p>
+  <b>Marca:</b>
+  <%= @moto.marca %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @moto.cliente %>
+</p>
+
+<p>
+  <b>Funcionario:</b>
+  <%= @moto.funcionario %>
+</p>
+
+
+<%= link_to 'Edit', edit_moto_path(@moto) %> |
+<%= link_to 'Back', motos_path %>

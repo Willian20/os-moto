@@ -1,0 +1,29 @@
+<h1>Listing motos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Marca</th>
+    <th>Cliente</th>
+    <th>Funcionario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @motos.each do |moto| %>
+  <tr>
+    <td><%= moto.nome %></td>
+    <td><%= moto.marca %></td>
+    <td><%= moto.cliente %></td>
+    <td><%= moto.funcionario %></td>
+    <td><%= link_to 'Show', moto %></td>
+    <td><%= link_to 'Edit', edit_moto_path(moto) %></td>
+    <td><%= link_to 'Excluir', moto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto', new_moto_path %>

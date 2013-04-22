@@ -1,0 +1,10 @@
+= semantic_form_for [@servico] do |form|
+  = form.input :data, :label => 'Data' 
+  = form.input :valor, :label => 'Valor'
+  = form.input :status, :label => 'Status'
+  = form.input :cliente, :member_label => :nome, :label => 'Cliente' 
+  = form.input :funcionario, :member_label => :nome, :label => 'Funcionario'
+  = form.input :moto, :member_label => :nome, :label => 'Moto'
+  = form.input :material, :member_label => :nome, :label => 'Material'
+
+  = form.submit 'Salvar'

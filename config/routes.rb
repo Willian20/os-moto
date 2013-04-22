@@ -1,4 +1,13 @@
 Osmoto::Application.routes.draw do
+  resources :servicos
+
+
+  resources :motos
+
+
+  resources :materials
+
+
   resources :funcionarios
 
 
