@@ -19,13 +19,13 @@
     <td><%= servico.data %></td>
     <td><%= servico.valor %></td>
     <td><%= servico.status %></td>
-    <td><%= servico.cliente %></td>
-    <td><%= servico.funcionario %></td>
-    <td><%= servico.moto %></td>
-    <td><%= servico.material %></td>
+    <td><%= servico.cliente.nome %></td>
+    <td><%= servico.funcionario.nome %></td>
+    <td><%= servico.moto.nome %></td>
+    <td><%= servico.material.nome %></td>
     <td><%= link_to 'Show', servico %></td>
     <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
-    <td><%= link_to 'Destroy', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Excluir', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
